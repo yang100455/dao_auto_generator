@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!--
+ 添加一个maven命令  ：command line : mybatis-generator:generate -e
+-->
+<generatorConfiguration>
+    <!--依赖路径-->
+    <classPathEntry
+            location="D:\repository\mysql\mysql-connector-java\5.1.30\mysql-connector-java-5.1.30.jar"/>
+    <context id="AllpyraTables" targetRuntime="MyBatis3">
+
+        <!-- example插件 -->
+        <plugin type="org.mybatis.generator.plugins.RenameExampleClassPlugin">
+            <property name="searchString" value="Example$"/>
+            <property name="replaceString" value="Criteria"/>
+        </plugin>
+
+        <!-- 序列化插件 -->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin">
+        </plugin>
+
+        <commentGenerator>
+            <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+        </commentGenerator>
+
+        <jdbcConnection driverClass="org.gjt.mm.mysql.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/morning_star_wms_web?autoReconnect=true"
+                        userId="root" password="1234">
+        </jdbcConnection>
+
+        <!--<jdbcConnection driverClass="org.gjt.mm.mysql.Driver"-->
+        <!--connectionURL="jdbc:mysql://172.16.50.21:3306/logistics_wms?autoReconnect=true"-->
+        <!--userId="max" password="123456">-->
+        <!--</jdbcConnection>-->
+
+        <!--	<jdbcConnection driverClass="org.gjt.mm.mysql.Driver"
+                connectionURL="jdbc:mysql://127.0.0.1:3306/yxw?autoReconnect=true"
+                userId="root" password="1234">
+            </jdbcConnection>-->
+
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!--bean位置-->
+        <javaModelGenerator targetPackage="com.morning.star.wms.entity"
+                            targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+
+        <!--*.xml位置-->
+        <sqlMapGenerator targetPackage="com.morning.star.wms.mapper"
+                         targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!--Mapper.java位置-->
+        <javaClientGenerator type="XMLMAPPER"
+                             targetPackage="com.morning.star.wms.mapper" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+
+        <!-- 表名字 -->
+        <table schema="wms_parcel_predict_items" tableName="wms_parcel_predict_items" domainObjectName="ParcelPredictItems"
+               selectByExampleQueryId="false">
+            <!--false去掉下划线，true保留下划线-->
+            <property name="useActualColumnNames" value="true"/>
+            <generatedKey column="orderId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>
+        <!-- <table schema="export_test" tableName="import_recharge_tariff_record" domainObjectName="ImportRechargeTariffRecord"
+            selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="orderId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>  -->
+
+
+        <!-- 	<table schema="export_test" tableName="import_order_info" domainObjectName="ImportOrderInfo"
+                selectByExampleQueryId="false">
+                <property name="useActualColumnNames" value="true" />
+                <generatedKey column="orderId" sqlStatement="MySql" type="post" identity="true"/>
+            </table>   -->
+        <!--  <table schema="export_test" tableName="import_order_info_ese_checking" domainObjectName="ImportOrderInfoEseChecking"
+           selectByExampleQueryId="false">
+           <property name="useActualColumnNames" value="true" />
+           <generatedKey column="orderId" sqlStatement="MySql" type="post" identity="true"/>
+       </table> -->
+        <!--  <table schema="export_test" tableName="import_order_info_ese_temp" domainObjectName="ImportOrderInfoEseTemp"
+            selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="orderId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>   -->
+        <!-- 		 <table schema="export_test" tableName="async_task_record" domainObjectName="AsyncTaskRecord"
+                    selectByExampleQueryId="false">
+                    <property name="useActualColumnNames" value="true" />
+                    <generatedKey column="orderId" sqlStatement="MySql" type="post" identity="true"/>
+                </table>  -->
+        <!-- <table schema="export_test" tableName="import_order_info" domainObjectName="ImportOrderInfo"
+           selectByExampleQueryId="false">
+           <property name="useActualColumnNames" value="true" />
+           <generatedKey column="orderId" sqlStatement="MySql" type="post" identity="true"/>
+       </table> -->
+        <!-- <table schema="export_test" tableName="import_bill_info_actual" domainObjectName="ImportBillInfoActual"
+                selectByExampleQueryId="false">
+                <property name="useActualColumnNames" value="true" />
+                <generatedKey column="orderId" sqlStatement="MySql" type="post" identity="true"/>
+            </table>  -->
+        <!--  <table schema="export_test" tableName="import_bill_item_actual" domainObjectName="ImportBillItemActual"
+                selectByExampleQueryId="false">
+                <property name="useActualColumnNames" value="true" />
+                <generatedKey column="orderId" sqlStatement="MySql" type="post" identity="true"/>
+            </table>   -->
+        <!--  <table schema="export_test" tableName="import_recharge_tariff_task" domainObjectName="ImportRechargeTariffTask"
+                selectByExampleQueryId="false">
+                <property name="useActualColumnNames" value="true" />
+                <generatedKey column="orderId" sqlStatement="MySql" type="post" identity="true"/>
+            </table>   -->
+        <!-- <table schema="export_test" tableName="import_bill_info_pre" domainObjectName="ImportBillInfoPre"
+            selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="orderId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>  -->
+        <!-- 	<table schema="export_test" tableName="import_ese_fee_set" domainObjectName="ImportEseFeeSet"
+                selectByExampleQueryId="false">
+                <property name="useActualColumnNames" value="true" />
+                <generatedKey column="orderId" sqlStatement="MySql" type="post" identity="true"/>
+            </table>
+             -->
+        <!-- <table schema="export_test" tableName="import_recharge_tariff_temp" domainObjectName="ImportRechargeTariffTemp"
+                selectByExampleQueryId="false">
+                <property name="useActualColumnNames" value="true" />
+                <generatedKey column="orderId" sqlStatement="MySql" type="post" identity="true"/>
+            </table>  -->
+        <!-- <table schema="export_test" tableName="import_bill_item_actual" domainObjectName="ImportBillItemActual"
+            selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="orderId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>
+         -->
+
+        <!-- 	<table schema="export_test" tableName="import_bill_item_pre" domainObjectName="ImportBillItemPre"
+                selectByExampleQueryId="false">
+                <property name="useActualColumnNames" value="true" />
+                <generatedKey column="orderId" sqlStatement="MySql" type="post" identity="true"/>
+            </table>   -->
+        <!-- <table schema="export_test" tableName="import_order_info" domainObjectName="ImportOrderInfo"
+            selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="orderId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>  -->
+
+        <!-- <table schema="export_test" tableName="import_recharge_deduct_record" domainObjectName="ImportRechargeDeductRecord"
+            selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="orderId" sqlStatement="MySql" type="post" identity="true"/>
+        </table> -->
+
+        <!-- 	<table schema="export_test" tableName="import_recharge_audit_record" domainObjectName="ImportRechargeAuditRecord"
+                selectByExampleQueryId="false">
+                <property name="useActualColumnNames" value="true" />
+                <generatedKey column="orderId" sqlStatement="MySql" type="post" identity="true"/>
+            </table>
+             -->
+        <!--  <table schema="export_test" tableName="import_recharge_record" domainObjectName="ImportRechargeRecord"
+            selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="orderId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>  -->
+        <!-- <table schema="export_test" tableName="import_recharge_account" domainObjectName="ImportRechargeAccount"
+            selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="orderId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>   -->
+        <!-- <table schema="export_test" tableName="import_bill_info_upload" domainObjectName="ImportBillInfoUpload"
+            selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="uploadId" sqlStatement="MySql" type="post" identity="true"/>
+        </table> -->
+
+        <!-- <table schema="export_test" tableName="import_bill_item_pre" domainObjectName="ImportBillItemPre"
+            selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="billPreItemId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>  -->
+
+        <!--<table schema="export_test" tableName="import_id_card_markup_relation" domainObjectName="ImportIdCardMarkupRelation"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="markupRelationId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>
+        <table schema="export_test" tableName="import_id_card_picture_share" domainObjectName="ImportIdCardPictureShare"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="idCardPictureId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>
+        <table schema="export_test" tableName="import_id_card_process_log" domainObjectName="ImportIdCardProcessLog"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="idCardProcessLogId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>
+        <table schema="export_test" tableName="import_id_card_pic_pull_request_log" domainObjectName="ImportIdCardPicPullRequestLog"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="requestLogId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>-->
+        <!-- <table schema="export_test" tableName="import_delivery_order" domainObjectName="ImportDeliveryOrder"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="deliveryOrderId" sqlStatement="MySql" type="post" identity="true"/>
+        </table> -->
+
+        <!--<table schema="export_test" tableName="import_id_card_picture_share" domainObjectName="ImportIdCardPictureShare"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="idCardPictureId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>-->
+
+        <!--<table schema="export_test" tableName="import_delivery_order" domainObjectName="ImportDeliveryOrder"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="deliveryOrderId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>-->
+        <!--<table schema="export_test" tableName="ese_custom_express" domainObjectName="EseCustomExpress"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="connectId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>-->
+
+        <!--<table schema="export_test" tableName="express_destination_connect" domainObjectName="ExpressDestinationConnect"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="connectId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>
+
+        <table schema="export_test" tableName="postage_district" domainObjectName="PostageDistrict"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="districtId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>
+
+        <table schema="export_test" tableName="postage_district_base_price" domainObjectName="PostageDistrictBasePrice"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="basePriceId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>
+
+        <table schema="export_test" tableName="postage_district_province" domainObjectName="PostageDistrictProvince"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="districtProvinceId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>
+
+        <table schema="export_test" tableName="postage_district_template_price" domainObjectName="PostageDistrictTemplatePrice"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="templateId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>-->
+
+        <!--<table schema="export_test" tableName="import_fee_customer" domainObjectName="ImportFeeCustomer"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="feeCustomerId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>-->
+
+        <!--<table schema="export_test" tableName="import_ese_customer_fee_set" domainObjectName="ImportEseCustomerFeeSet"
+               selectByExampleQueryId="false">
+            <property name="useActualColumnNames" value="true" />
+            <generatedKey column="feeId" sqlStatement="MySql" type="post" identity="true"/>
+        </table>-->
+
+    </context>
+
+</generatorConfiguration>
