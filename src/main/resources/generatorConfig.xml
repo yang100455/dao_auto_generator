@@ -69,12 +69,14 @@
 
 
         <!-- 表名字 -->
-        <table schema="wms_parcel_predict_items" tableName="wms_parcel_predict_items"
-               domainObjectName="ParcelPredictItems"
+        <table tableName="wms_parcel_predict_items"  domainObjectName="ParcelPredictItems"
                selectByExampleQueryId="false">
-            <!--false去掉下划线，true保留下划线-->
+            <!--驼峰命名，false去掉下划线，true保留下划线-->
             <property name="useActualColumnNames" value="true"/>
-            <generatedKey column="orderId" sqlStatement="MySql" type="post" identity="true"/>
+            <generatedKey column="orderId" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true"/>
+
+            <!--覆盖text类型为 varchar处理-->
+            <!--<columnOverride column="字段名" jdbcType="VARCHAR" />-->
         </table>
 
 
