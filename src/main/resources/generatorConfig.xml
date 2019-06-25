@@ -9,7 +9,7 @@
 <generatorConfiguration>
     <!--依赖路径-->
     <classPathEntry
-            location="D:\repository\mysql\mysql-connector-java\5.1.30\mysql-connector-java-5.1.30.jar"/>
+            location="/Users/apple/mytools/maven_rep_ao10/mysql/mysql-connector-java/8.0.11/mysql-connector-java-8.0.11.jar"/>
     <context id="AllpyraTables" targetRuntime="MyBatis3">
 
         <!-- example插件 -->
@@ -37,10 +37,10 @@
             <!--<property name="suppressAllComments" value="true"/>-->
         </commentGenerator>
 
-        <!--jdbc连接-->
-        <jdbcConnection driverClass="org.gjt.mm.mysql.Driver"
-                        connectionURL="jdbc:mysql://127.0.0.1:3306/morning_star_wms_web?autoReconnect=true"
-                        userId="root" password="1234">
+        <!--jdbc连接，注意mysql5的驱动和mysql8的driverClass有所区别-->
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/yang?autoReconnect=true"
+                        userId="root" password="123456">
         </jdbcConnection>
 
 
@@ -69,11 +69,11 @@
 
 
         <!-- 表名字 -->
-        <table tableName="wms_parcel_predict_items"  domainObjectName="ParcelPredictItems"
+        <table tableName="Student" domainObjectName="Student"
                selectByExampleQueryId="false">
             <!--驼峰命名，false去掉下划线，true保留下划线-->
             <property name="useActualColumnNames" value="true"/>
-            <generatedKey column="orderId" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true"/>
+            <generatedKey column="id" sqlStatement="SELECT LAST_INSERT_ID()" type="post" identity="true"/>
 
             <!--覆盖text类型为 varchar处理-->
             <!--<columnOverride column="字段名" jdbcType="VARCHAR" />-->
