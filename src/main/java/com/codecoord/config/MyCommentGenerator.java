@@ -230,7 +230,7 @@ public class MyCommentGenerator implements CommentGenerator {
         StringBuilder sb = new StringBuilder();
 
         field.addJavaDocLine("/**");
-        sb.append(" * tianxincode@163.com");
+//        sb.append(" * author: yang");
         sb.append("\n\t * " + LocalDateTime.now());
         field.addJavaDocLine(sb.toString());
         field.addJavaDocLine(" */");
